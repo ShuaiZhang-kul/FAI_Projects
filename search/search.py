@@ -168,7 +168,7 @@ def aStarSearch(problem: SearchProblem, heuristic=nullHeuristic) -> List[Directi
     fringe = util.PriorityQueue()
     onPath = list()
     bestCost = dict()
-    visited = set()
+    # visited = set()
     startState = problem.getStartState()
     bestCost[startState] = 0
     fringe.push((startState,onPath,0),0 + heuristic(startState,problem))
