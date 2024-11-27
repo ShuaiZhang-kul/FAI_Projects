@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="702f0b0e-9b39-44c3-98ba-044dbe1d5a8e" name="Changes" comment="searchAgents.py file finished - P1 finished">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/search.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/VERSION" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/autograder.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/eightpuzzle.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/game.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ghostAgents.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/grading.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/graphicsDisplay.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/graphicsUtils.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/keyboardAgents.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/layout.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/layouts/bigCorners.lay" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/layouts/bigMaze.lay" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/layouts/bigSafeSearch.lay" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/layouts/bigSearch.lay" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/layouts/boxSearch.lay" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/layouts/capsuleClassic.lay" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/layouts/contestClassic.lay" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/layouts/contoursMaze.lay" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/layouts/greedySearch.lay" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/layouts/mediumClassic.lay" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/layouts/mediumCorners.lay" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/layouts/mediumDottedMaze.lay" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/layouts/mediumMaze.lay" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/layouts/mediumSafeSearch.lay" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/layouts/mediumScaryMaze.lay" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/layouts/mediumSearch.lay" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/layouts/minimaxClassic.lay" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/layouts/oddSearch.lay" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/layouts/openClassic.lay" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/layouts/openMaze.lay" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/layouts/openSearch.lay" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/layouts/originalClassic.lay" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/layouts/powerClassic.lay" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/layouts/smallClassic.lay" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/layouts/smallMaze.lay" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/layouts/smallSafeSearch.lay" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/layouts/smallSearch.lay" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/layouts/testClassic.lay" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/layouts/testMaze.lay" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/layouts/testSearch.lay" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/layouts/tinyCorners.lay" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/layouts/tinyMaze.lay" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/layouts/tinySafeSearch.lay" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/layouts/tinySearch.lay" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/layouts/trappedClassic.lay" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/layouts/trickyClassic.lay" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/layouts/trickySearch.lay" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pacman.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pacmanAgents.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projectParams.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/searchTestClasses.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testClasses.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testParser.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/CONFIG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q1/CONFIG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q1/graph_backtrack.solution" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q1/graph_backtrack.test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q1/graph_bfs_vs_dfs.solution" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q1/graph_bfs_vs_dfs.test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q1/graph_infinite.solution" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q1/graph_infinite.test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q1/graph_manypaths.solution" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q1/graph_manypaths.test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q1/pacman_1.solution" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q1/pacman_1.test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q2/CONFIG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q2/graph_backtrack.solution" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q2/graph_backtrack.test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q2/graph_bfs_vs_dfs.solution" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q2/graph_bfs_vs_dfs.test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q2/graph_infinite.solution" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q2/graph_infinite.test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q2/graph_manypaths.solution" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q2/graph_manypaths.test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q2/pacman_1.solution" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q2/pacman_1.test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q3/CONFIG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q3/graph_backtrack.solution" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q3/graph_backtrack.test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q3/graph_bfs_vs_dfs.solution" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q3/graph_bfs_vs_dfs.test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q3/graph_infinite.solution" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q3/graph_infinite.test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q3/graph_manypaths.solution" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q3/graph_manypaths.test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q3/ucs_0_graph.solution" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q3/ucs_0_graph.test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q3/ucs_1_problemC.solution" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q3/ucs_1_problemC.test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q3/ucs_2_problemE.solution" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q3/ucs_2_problemE.test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q3/ucs_3_problemW.solution" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q3/ucs_3_problemW.test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q3/ucs_4_testSearch.solution" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q3/ucs_4_testSearch.test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q3/ucs_5_goalAtDequeue.solution" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q3/ucs_5_goalAtDequeue.test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q4/CONFIG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q4/astar_0.solution" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q4/astar_0.test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q4/astar_1_graph_heuristic.solution" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q4/astar_1_graph_heuristic.test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q4/astar_2_manhattan.solution" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q4/astar_2_manhattan.test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q4/astar_3_goalAtDequeue.solution" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q4/astar_3_goalAtDequeue.test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q4/astar_expand_1.solution" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q4/astar_expand_1.test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q4/astar_expand_2.solution" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q4/astar_expand_2.test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q4/graph_backtrack.solution" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q4/graph_backtrack.test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q4/graph_manypaths.solution" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q4/graph_manypaths.test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q5/CONFIG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q5/corner_tiny_corner.solution" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q5/corner_tiny_corner.test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q6/CONFIG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q6/corner_sanity_1.solution" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q6/corner_sanity_1.test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q6/corner_sanity_2.solution" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q6/corner_sanity_2.test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q6/corner_sanity_3.solution" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q6/corner_sanity_3.test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q6/medium_corners.solution" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q6/medium_corners.test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q7/CONFIG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q7/food_heuristic_1.solution" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q7/food_heuristic_1.test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q7/food_heuristic_10.solution" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q7/food_heuristic_10.test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q7/food_heuristic_11.solution" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q7/food_heuristic_11.test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q7/food_heuristic_12.solution" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q7/food_heuristic_12.test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q7/food_heuristic_13.solution" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q7/food_heuristic_13.test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q7/food_heuristic_14.solution" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q7/food_heuristic_14.test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q7/food_heuristic_15.solution" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q7/food_heuristic_15.test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q7/food_heuristic_16.solution" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q7/food_heuristic_16.test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q7/food_heuristic_17.solution" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q7/food_heuristic_17.test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q7/food_heuristic_2.solution" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q7/food_heuristic_2.test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q7/food_heuristic_3.solution" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q7/food_heuristic_3.test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q7/food_heuristic_4.solution" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q7/food_heuristic_4.test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q7/food_heuristic_5.solution" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q7/food_heuristic_5.test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q7/food_heuristic_6.solution" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q7/food_heuristic_6.test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q7/food_heuristic_7.solution" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q7/food_heuristic_7.test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q7/food_heuristic_8.solution" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q7/food_heuristic_8.test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q7/food_heuristic_9.solution" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q7/food_heuristic_9.test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q7/food_heuristic_grade_tricky.solution" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q7/food_heuristic_grade_tricky.test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q7/myselfTest.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q8/CONFIG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q8/closest_dot_1.solution" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q8/closest_dot_1.test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q8/closest_dot_10.solution" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q8/closest_dot_10.test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q8/closest_dot_11.solution" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q8/closest_dot_11.test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q8/closest_dot_12.solution" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q8/closest_dot_12.test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q8/closest_dot_13.solution" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q8/closest_dot_13.test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q8/closest_dot_2.solution" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q8/closest_dot_2.test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q8/closest_dot_3.solution" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q8/closest_dot_3.test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q8/closest_dot_4.solution" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q8/closest_dot_4.test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q8/closest_dot_5.solution" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q8/closest_dot_5.test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q8/closest_dot_6.solution" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q8/closest_dot_6.test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q8/closest_dot_7.solution" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q8/closest_dot_7.test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q8/closest_dot_8.solution" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q8/closest_dot_8.test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q8/closest_dot_9.solution" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/q8/closest_dot_9.test" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/textDisplay.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/util.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+    </option>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;ShuaiZhang-kul&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/ShuaiZhang-kul/FAI_Projects.git&quot;,
+    &quot;accountId&quot;: &quot;2a1623dc-3e3d-4012-9923-e745543995af&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2oM6N7Byugh2JzsiVskvsJmNHJT" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;p1&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/zhangshuai/Desktop/2024Study/FAI/Projects/FAI_Projects/search&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;ml.llm.LLMConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager">
+    <configuration default="true" type="DjangoTestsConfigurationType">
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="PyBehaveRunConfigurationType" factoryName="Behave">
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="ADDITIONAL_ARGS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="Python.FlaskServer">
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="Tox" factoryName="Tox">
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docs" factoryName="Docutils task">
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
+      <option name="docutils_input_file" value="" />
+      <option name="docutils_output_file" value="" />
+      <option name="docutils_params" value="" />
+      <option name="docutils_task" value="" />
+      <option name="docutils_open_in_browser" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docs" factoryName="Sphinx task">
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
+      <option name="docutils_input_file" value="" />
+      <option name="docutils_output_file" value="" />
+      <option name="docutils_params" value="" />
+      <option name="docutils_task" value="" />
+      <option name="docutils_open_in_browser" value="false" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Doctests">
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-PY-242.23726.102" />
+        <option value="bundled-python-sdk-5e1850174b45-399fe30bd8c1-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-242.23726.102" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="702f0b0e-9b39-44c3-98ba-044dbe1d5a8e" name="Changes" comment="" />
+      <created>1730667054637</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1730667054637</updated>
+      <workItem from="1730667055873" duration="379000" />
+      <workItem from="1730667499547" duration="37415000" />
+      <workItem from="1731060049517" duration="891000" />
+    </task>
+    <task id="LOCAL-00001" summary="search file finished for the first four questions">
+      <option name="closed" value="true" />
+      <created>1730756053914</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1730756053914</updated>
+    </task>
+    <task id="LOCAL-00002" summary="searchAgents.py file finished - P1 finished">
+      <option name="closed" value="true" />
+      <created>1731060143910</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1731060143910</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="search file finished for the first four questions" />
+    <MESSAGE value="searchAgents.py file finished - P1 finished" />
+    <option name="LAST_COMMIT_MESSAGE" value="searchAgents.py file finished - P1 finished" />
+  </component>
+</project>
