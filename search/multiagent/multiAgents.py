@@ -10,8 +10,6 @@
 # (denero@cs.berkeley.edu) and Dan Klein (klein@cs.berkeley.edu).
 # Student side autograding was added by Brad Miller, Nick Hay, and
 # Pieter Abbeel (pabbeel@cs.berkeley.edu).
-
-
 from util import manhattanDistance
 from game import Directions
 import random, util
@@ -49,7 +47,7 @@ class ReflexAgent(Agent):
         chosenIndex = random.choice(bestIndices) # Pick randomly among the best
 
         "Add more of your code here if you want to"
-
+        # print(legalMoves)
         return legalMoves[chosenIndex]
 
     def evaluationFunction(self, currentGameState: GameState, action):
@@ -75,7 +73,29 @@ class ReflexAgent(Agent):
         newScaredTimes = [ghostState.scaredTimer for ghostState in newGhostStates]
 
         "*** YOUR CODE HERE ***"
-        return successorGameState.getScore()
+        #the priority is to avoid the ghost then get more power and the last one will be get remaining score high
+        ghostFactor = 5
+        foodFactor = 3
+        # print(f"newPos:{newPos} ,newFood:{newFood} ,newGhostStates:{newGhostStates} ,newScaredTimes:{newScaredTimes} !")
+        if min(newScaredTimes) == 0: ghostFactor = -5
+        distToFoods = [ util.manhattanDistance(newPos,food) for food in newFood.asList() ]
+        closestFood = min(distToFoods) if distToFoods else float('inf')
+        distToGhosts = [ util.manhattanDistance(newPos,ghost.getPosition()) for ghost in newGhostStates]
+        closestGhost = min(distToGhosts)  if distToGhosts else float('inf')
+        """
+        here we will consider three factors that might influence the new action score：
+        1. the original score of the action
+        2. distance to the closest food
+        3. distance to the closest ghost
+            a. ghost is scared: the more close the ghost is, the more score the action get
+            b. ghost is not scared: the more close the ghost is, the less score the action get
+        """
+        # print(f"getScore:{successorGameState.getScore()}, closestFood:{1/closestFood}, signFactor:{ghostFactor}, closestGhost:{closestGhost}")
+        foodScore = foodFactor * 1/max(closestFood,1)
+        ghostScore = ghostFactor * (1/max(closestGhost,1))
+        comprehensiveScore = successorGameState.getScore() + foodScore + ghostScore
+        return comprehensiveScore
+
 
 def scoreEvaluationFunction(currentGameState: GameState):
     """
@@ -136,7 +156,49 @@ class MinimaxAgent(MultiAgentSearchAgent):
         Returns whether or not the game state is a losing state
         """
         "*** YOUR CODE HERE ***"
-        util.raiseNotDefined()
+        def recursionHelper(currState, agentIndex, count):
+            # 1. base case
+            if currState.isWin() or currState.isLose():
+                return self.evaluationFunction(currState)
+            if count == 0:
+                return self.evaluationFunction(currState)
+            # 2. current node operation
+            currentActions = currState.getLegalActions(agentIndex)
+            if agentIndex == 0:         #Try to maximize the score
+                bestScore = float('-inf')
+                for currentAction in currentActions:
+                    successorState = currState.generateSuccessor(agentIndex, currentAction)
+                    tempScore = recursionHelper(successorState, agentIndex + 1, count - 1)
+                    bestScore = max(bestScore, tempScore)
+                return bestScore
+            else:                       #Try to minimize the score
+                bestScore = float('inf')
+                for currentAction in currentActions:
+                    successorState = currState.generateSuccessor(agentIndex, currentAction)
+                    if agentIndex == agentNum - 1:
+                        tempScore = recursionHelper(successorState, 0, count - 1)
+                    else:
+                        tempScore =  recursionHelper(successorState, agentIndex + 1, count - 1)
+                    bestScore = min(bestScore, tempScore)
+                return bestScore
+
+        "*** Start excute the evaluation ***"
+        # Even though the final optimal result is deterministic leaf, here we need to consider the adversarial condition
+        # which means we cannot choose the optimal leaf but the relatively best we have in the worst case(adversarial)
+        # print(f"agent number is:{gameState.getNumAgents()} , depth is:{self.depth}")
+        agentNum = gameState.getNumAgents()
+        initialActions = gameState.getLegalActions(0)
+        initialCount = self.depth * agentNum
+        bestScore = float('-inf')
+        bestAction = None
+        for initialAction in initialActions:
+            initialState = gameState.generateSuccessor(0,initialAction)
+            tempScore =  recursionHelper(initialState,1,initialCount-1)
+            if tempScore > bestScore:
+                bestAction = initialAction
+                bestScore = tempScore
+        return bestAction
+
 
 class AlphaBetaAgent(MultiAgentSearchAgent):
     """
@@ -148,7 +210,70 @@ class AlphaBetaAgent(MultiAgentSearchAgent):
         Returns the minimax action using self.depth and self.evaluationFunction
         """
         "*** YOUR CODE HERE ***"
-        util.raiseNotDefined()
+        def maxValue(currState, agentIndex, count, alpha, beta):
+            bestScore = float('-inf')
+            currentActions = currState.getLegalActions(agentIndex)
+            for currentAction in currentActions:
+                successorState = currState.generateSuccessor(agentIndex, currentAction)
+                tempScore = recursionHelper(successorState, agentIndex + 1, count - 1, alpha, beta)
+                bestScore = max(bestScore, tempScore)
+                if bestScore > beta:
+                    return bestScore
+                alpha = max(alpha, bestScore)
+            return bestScore
+
+
+        def minValue(currState, agentIndex, count, alpha, beta):
+            bestScore = float('inf')
+            currentActions = currState.getLegalActions(agentIndex)
+            for currentAction in currentActions:
+                successorState = currState.generateSuccessor(agentIndex, currentAction)
+                if agentIndex == agentNum - 1:
+                    tempScore = recursionHelper(successorState, 0, count - 1, alpha, beta)
+                else:
+                    tempScore =  recursionHelper(successorState, agentIndex + 1, count - 1, alpha, beta)
+                bestScore = min(bestScore, tempScore)
+                if bestScore < alpha:
+                    return bestScore
+                beta = min(beta, bestScore)
+
+            return bestScore
+
+        def recursionHelper(currState, agentIndex, count, alpha, beta):
+            # 1. base case
+            if currState.isWin() or currState.isLose():
+                return self.evaluationFunction(currState)
+            if count == 0:
+                return self.evaluationFunction(currState)
+            # 2. current node operation
+            if agentIndex == 0:         #Try to maximize the score
+                bestScore = maxValue(currState, agentIndex, count, alpha, beta)
+
+            else:                       #Try to minimize the score
+                bestScore = minValue(currState, agentIndex, count, alpha, beta)
+            return bestScore
+
+        "*** Start excute the evaluation ***"
+        # Even though the final optimal result is deterministic leaf, here we need to consider the adversarial condition
+        # which means we cannot choose the optimal leaf but the relatively best we have in the worst case(adversarial)
+        # print(f"agent number is:{gameState.getNumAgents()} , depth is:{self.depth}")
+        agentNum = gameState.getNumAgents()
+        initialActions = gameState.getLegalActions(0)
+        initialCount = self.depth * agentNum
+        bestScore = float('-inf')
+        bestAction = None
+        alpha = float('-inf')
+        beta = float('inf')
+        for initialAction in initialActions:
+            initialState = gameState.generateSuccessor(0,initialAction)
+            tempScore =  recursionHelper(initialState,1,initialCount-1,alpha,beta)
+            if tempScore > bestScore:
+                bestAction = initialAction
+                bestScore = tempScore
+            if bestScore > beta:
+                return bestAction
+            alpha = max(alpha, bestScore)                     # it should update the alpha value here!!!
+        return bestAction
 
 class ExpectimaxAgent(MultiAgentSearchAgent):
     """
@@ -163,7 +288,53 @@ class ExpectimaxAgent(MultiAgentSearchAgent):
         legal moves.
         """
         "*** YOUR CODE HERE ***"
-        util.raiseNotDefined()
+        def maxValue(currState, agentIndex, count):
+            bestScore = float('-inf')
+            currentActions = currState.getLegalActions(agentIndex)
+            for currentAction in currentActions:
+                successorState = currState.generateSuccessor(agentIndex, currentAction)
+                tempScore = recursionHelper(successorState, agentIndex + 1, count - 1,)
+                bestScore = max(bestScore, tempScore)
+            return bestScore
+        def expectValue(currState, agentIndex, count):
+            expectScore = 0
+            currentActions = currState.getLegalActions(agentIndex)
+            for currentAction in currentActions:
+                successorState = currState.generateSuccessor(agentIndex, currentAction)
+                if agentIndex == agentNum - 1:
+                    tempScore = recursionHelper(successorState, 0, count - 1)
+                else:
+                    tempScore =  recursionHelper(successorState, agentIndex + 1, count - 1)
+                expectScore += tempScore
+            return expectScore/max(len(currentActions),1)
+
+        def recursionHelper(currState, agentIndex, count):
+            # 1. base case
+            if currState.isWin() or currState.isLose():
+                return self.evaluationFunction(currState)
+            if count == 0:
+                return self.evaluationFunction(currState)
+            # 2. current node operation
+            if agentIndex == 0:         #Try to maximize the score
+                bestScore = maxValue(currState, agentIndex, count)
+
+            else:                       #Try to get the expectValue
+                bestScore = expectValue(currState, agentIndex, count)
+            return bestScore
+
+        agentNum = gameState.getNumAgents()
+        initialActions = gameState.getLegalActions(0)
+        initialCount = self.depth * agentNum
+        bestScore = float('-inf')
+        bestAction = None
+        for initialAction in initialActions:
+            initialState = gameState.generateSuccessor(0, initialAction)
+            tempScore = recursionHelper(initialState, 1, initialCount - 1)
+            if tempScore > bestScore:
+                bestAction = initialAction
+                bestScore = tempScore
+        return bestAction
+        # util.raiseNotDefined()
 
 def betterEvaluationFunction(currentGameState: GameState):
     """
@@ -171,9 +342,37 @@ def betterEvaluationFunction(currentGameState: GameState):
     evaluation function (question 5).
 
     DESCRIPTION: <write something here so we know what you did>
+    the difference of this approach is identical to the Q1 but using currentState to evalute
+    instead of using currentState + Action => successorState => evaluation
+    here we will consider three factors that might influence the new action score：
+        1. the original score of the action
+        2. distance to the closest food
+        3. distance to the closest ghost
+            a. ghost is scared: the more close the ghost is, the more score the action get
+            b. ghost is not scared: the more close the ghost is, the less score the action get
     """
+     # Useful information you can extract from a GameState (pacman.py)
+    currPos = currentGameState.getPacmanPosition()
+    currFood = currentGameState.getFood()
+    currGhostStates = currentGameState.getGhostStates()
+    currScaredTimes = [ghostState.scaredTimer for ghostState in currGhostStates]
+
     "*** YOUR CODE HERE ***"
-    util.raiseNotDefined()
+    #the priority is to avoid the ghost then get more power and the last one will be get remaining score high
+    ghostFactor = 5
+    foodFactor = 3
+    # print(f"newPos:{newPos} ,newFood:{newFood} ,newGhostStates:{newGhostStates} ,newScaredTimes:{newScaredTimes} !")
+    if min(currScaredTimes) == 0: ghostFactor = -5
+    distToFoods = [ util.manhattanDistance(currPos,food) for food in currFood.asList() ]
+    closestFood = min(distToFoods) if distToFoods else float('inf')
+    distToGhosts = [ util.manhattanDistance(currPos,ghost.getPosition()) for ghost in currGhostStates]
+    closestGhost = min(distToGhosts)  if distToGhosts else float('inf')
+
+    # print(f"getScore:{successorGameState.getScore()}, closestFood:{1/closestFood}, signFactor:{ghostFactor}, closestGhost:{closestGhost}")
+    foodScore = foodFactor * 1/max(closestFood,1)
+    ghostScore = ghostFactor * (1/max(closestGhost,1))
+    comprehensiveScore = currentGameState.getScore() + foodScore + ghostScore
+    return comprehensiveScore
 
 # Abbreviation
 better = betterEvaluationFunction
